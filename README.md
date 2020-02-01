@@ -1,1 +1,1 @@
-# janice-magic
+# hamoja-ETL

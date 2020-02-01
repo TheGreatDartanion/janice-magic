@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Travel Authorization Request</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<!-- <div class="container-fluid">
+  <h2>Stacked form</h2>
+  <form action="/" method="POST">
+    <div class="form-inline">
+      <label for="first_name">First Name:</label>
+      <input type="text" class="form-control" id="first_name" placeholder="Enter first name" name="first_name">
+      <label for="last_name">Last Name:</label>
+      <input type="text" class="form-control" id="last_name" placeholder="Enter last name" name="last_name">
+    </div> -->
+    <!-- <br> -->
+    <!-- <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div> -->
+    <!-- <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div> -->
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-brand" style="color: aliceblue; font-size: 18pt;">
+      Travel Authorization Request
+    </li>
+  </ul>
+
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="#client_info_fed">Client</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#tpoc_info_fed">TPOC</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#traveler_info_fed">Traveler</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#employee_training">Training</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#pre_deployment_tasks">Tasks</a>
+    </li>
+  </ul>
+
+</nav>
+
+<form action="{{ url_for('process_form_data') }}" method="POST">
+
+  <div id="client_info_fed" class="container-fluid" style="margin-top: 100px; margin-bottom: 25px;">
+    <div class="card" style="background-color: aliceblue;">
+      <div class="card-body">
+        <h2>Client Information</h2>
+        <hr class="my-4">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+              <label for="industry_partner">Industry Partner:</label>
+              <input type="text" class="form-control" id="industry_partner" placeholder="Enter Partner Name" name="industry_partner">
+            </div>
+            <div class="form-group">
+              <label for="client_id">Client:</label>
+              <input type="text" class="form-control" id="client_id" placeholder="Enter Client Name" name="client_id">
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label for="travel_no">Travel #:</label>
+                <input type="text" class="form-control" id="travel_no" placeholder="Enter Travel No." name="travel_no">
+              </div>
+              <div class="form-group">
+                <label for="dt">Date:</label>
+                <input type="date" class="form-control" id="dt" placeholder="Enter Date" name="dt">
+              </div>
+              <div class="form-group">
+                <label for="project_name">Project Name:</label>
+                <input type="text" class="form-control" id="project_name" placeholder="Enter Project Name" name="project_name">
+              </div>
+              <div class="form-group">
+                <label for="project_id">Project ID/IA #:</label>
+                <input type="text" class="form-control" id="project_id" placeholder="Enter Project ID" name="project_id">
+              </div>
+              <div class="form-group">
+                <label for="contract_task_order">Contract/Task Order:</label>
+                <input type="text" class="form-control" id="contract_task_order" placeholder="Enter Contract/Task Order" name="contract_task_order">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <br>
+  
+  <div id="tpoc_info_fed" class="container-fluid" style="margin-bottom: 25px;">
+    <div class="card" style="background-color: palegoldenrod;">
+      <div class="card-body">
+        <h2>TPOC Information</h2>
+        <hr class="my-4">
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group">
+              <label for="from_requestor">From (Requestor):</label>
+              <input type="text" class="form-control" id="from_requestor" placeholder="Enter Requestor Name" name="from_requestor">
+            </div>
+            <div class="form-group">
+              <label for="through">Through:</label>
+              <input type="text" class="form-control" id="through" placeholder="Enter Value" name="through">
+            </div>
+            <div class="form-group">
+              <label for="funding_stream">Funding Stream (select one):</label>
+              <select class="custom-select" id="funding_stream">
+                <option selected>Choose...</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="subject_id">From (Requestor):</label>
+              <input type="text" class="form-control" id="subject_id" placeholder="Enter Value" name="subject_id">
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+              <div class="form-group">
+                <label for="cum_amt_billed">Billed - Cummulative Amount:</label>
+                <input type="text" class="form-control" id="cum_amt_billed" placeholder="Enter Amount Billed" name="cum_amt_billed">
+              </div>
+              <div class="form-group">
+                <label for="cum_amt_billed_balance">Balance - Cummulative Amount:</label>
+                <input type="text" class="form-control" id="cum_amt_billed_balance" placeholder="Enter Balance" name="cum_amt_billed_balance">
+              </div>
+              <div class="form-group">
+                <label for="estimate">Estimate:</label>
+                <input type="text" class="form-control" id="estimate" placeholder="Enter Estimate" name="estimate">
+              </div>
+              <div class="form-group">
+                <label for="estimate_balance">Balance - Estimate:</label>
+                <input type="text" class="form-control" id="estimate_balance" placeholder="Enter Estimate Balance" name="estimate_balance">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <br>
+
+  <div class="container-fluid">
+    <input type="submit" class="btn btn-secondary btn-block">Submit</button>  
+  </div>
+
+</form>
+
+
+
+      <!-- <h2>Client Information</h2>
+    <form action="/" method="POST">
+      <div class="form-inline">
+        <label for="first_name">First Name:</label>
+        <input type="text" class="form-control" id="first_name" placeholder="Enter first name" name="first_name">
+        <label for="last_name">Last Name:</label>
+        <input type="text" class="form-control" id="last_name" placeholder="Enter last name" name="last_name">
+      </div>
+    </form> -->
+
+
+
+</body>
+</html>
